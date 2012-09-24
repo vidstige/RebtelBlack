@@ -23,5 +23,10 @@ namespace RebtelBlack
             }
 
         }
+
+        public List<EndpointIdentity> Endpoints
+        {
+            get { return _endpoints; }
+        }
     }
 }

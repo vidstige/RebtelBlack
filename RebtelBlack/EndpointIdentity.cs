@@ -13,5 +13,7 @@ namespace RebtelBlack
         {
             _endpoint = endpoint;
         }
+
+        public string Identity { get { return "Call " + _endpoint; } }
     }
 }

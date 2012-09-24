@@ -7,12 +7,17 @@ namespace RebtelBlack
     {
         private readonly ObservableCollection<ContactViewModel> _contacts = new ObservableCollection<ContactViewModel>();
         private ContactViewModel _selectedContact;
-
+        private readonly RebtelUser _user = new RebtelUser();
 
         public MainViewModel()
         {
             _contacts.Add(new ContactViewModel("Pernilla Uhlin", "+46707889088"));
             _contacts.Add(new ContactViewModel("Anna Karlsson", "+461122334"));
+        }
+
+        public RebtelUser User
+        {
+            get { return _user; }
         }
 
         public ObservableCollection<ContactViewModel> Contacts

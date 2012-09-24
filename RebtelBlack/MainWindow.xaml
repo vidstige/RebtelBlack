@@ -22,7 +22,8 @@
     <!-- The title bar cusomizations -->
     <Controls:MetroWindow.WindowCommands>
         <Controls:WindowCommands>
-            <Button FontSize="12" Content="Samuel Carlsson" ToolTip="Go to your dashboard at rebtel.com" />
+            <!-- <Image Source="{Binding User.Gravatar}" Stretch="None"/> -->
+            <Button FontSize="12" Content="{Binding User.Name}" ToolTip="Go to your dashboard at rebtel.com" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.WindowCommands>
 
@@ -77,7 +78,18 @@
                         <TextBlock Grid.ColumnSpan="2" Grid.Row="0" FontSize="32" Text="{Binding Name}" />
                         
                         <StackPanel Grid.Column="0" Grid.Row="1">
-                            <Button Style="{DynamicResource FlatButtonStyle}">Call</Button>
+                            <ListBox ItemsSource="{Binding Endpoints}" BorderThickness="0">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Style="{DynamicResource FlatButtonStyle}" Content="{Binding Identity}" />
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <Button Style="{DynamicResource FlatButtonStyle}">Call for Free</Button>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="1" Grid.Row="1">
+                            <local:Balloon>Hi, whats up?</local:Balloon>
                         </StackPanel>
 
                     </Grid>
