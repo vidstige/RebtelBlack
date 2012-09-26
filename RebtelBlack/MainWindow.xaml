@@ -62,7 +62,7 @@
             <ContentControl.Resources>
 
                 <DataTemplate DataType="{x:Type local:Empty}">
-                    <TextBlock>ripples</TextBlock>
+                    <Image Source="Images/ripples.png" />
                 </DataTemplate>
                 
                 <DataTemplate DataType="{x:Type local:ContactViewModel}">
