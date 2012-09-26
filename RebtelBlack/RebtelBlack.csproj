@@ -64,9 +64,18 @@
     <Compile Include="Balloon.xaml.cs">
       <DependentUpon>Balloon.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DomainModel\Call.cs" />
+    <Compile Include="DomainModel\TextMessage.cs" />
+    <Compile Include="HistoryControl.xaml.cs">
+      <DependentUpon>HistoryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RebtelUser.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="Balloon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HistoryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

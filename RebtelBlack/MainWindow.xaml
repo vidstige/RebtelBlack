@@ -37,21 +37,24 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <ListBox ItemsSource="{Binding Contacts}" BorderBrush="{x:Null}" SelectedItem="{Binding SelectedContact}" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Width="32" Height="32" />
-                        <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
+        <StackPanel Orientation="Vertical">
+            <Button>Add</Button>
+            <ListBox ItemsSource="{Binding Contacts}" BorderBrush="{x:Null}" SelectedItem="{Binding SelectedContact}" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Width="32" Height="32" />
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" VerticalAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+        
         <Controls:TransitioningContentControl
                 Grid.Column="2" Content="{Binding SelectedContact, TargetNullValue={x:Static local:Empty.Value}}"
                 Transition="RightTransition">
@@ -87,11 +90,9 @@
                             </ListBox>
                             <Button Style="{DynamicResource FlatButtonStyle}">Call for Free</Button>
                         </StackPanel>
-                        
-                        <StackPanel Grid.Column="1" Grid.Row="1">
-                            <local:Balloon>Hi, whats up?</local:Balloon>
-                        </StackPanel>
 
+                        <local:HistoryControl Grid.Column="1" Grid.Row="1" HistoryItemsSource="{Binding History}" />
+                        
                     </Grid>
                 </DataTemplate>
 

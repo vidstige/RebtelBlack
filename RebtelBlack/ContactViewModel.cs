@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using RebtelBlack.DomainModel;
+
 namespace RebtelBlack
 {
     class ContactViewModel: ViewModel
@@ -27,6 +29,20 @@ namespace RebtelBlack
         public List<EndpointIdentity> Endpoints
         {
             get { return _endpoints; }
+        }
+
+        public List<object> History
+        {
+            get
+            {
+                return new List<object>
+                {
+                    new TextMessage(),
+                    new TextMessage(),
+                    new TextMessage(),
+                    new Call()
+                }; 
+            }
         }
     }
 }
