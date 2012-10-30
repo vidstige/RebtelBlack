@@ -62,7 +62,9 @@
             <ContentControl.Resources>
 
                 <DataTemplate DataType="{x:Type local:Empty}">
-                    <Image Source="Images/ripples.png" />
+                    <Grid>
+                        <Image Source="Images/debossed_heart.png" Width="256" Height="256" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                    </Grid>
                 </DataTemplate>
                 
                 <DataTemplate DataType="{x:Type local:ContactViewModel}">
