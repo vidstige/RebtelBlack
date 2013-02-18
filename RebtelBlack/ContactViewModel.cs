@@ -44,5 +44,10 @@ namespace RebtelBlack
                 }; 
             }
         }
+
+        public bool NetworkOperationInProgress
+        {
+            get { return true; }
+        }
     }
 }

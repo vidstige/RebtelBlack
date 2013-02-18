@@ -68,6 +68,8 @@
     <Compile Include="DomainModel\TextMessage.cs" />
     <Compile Include="HistoryControl.xaml.cs">
       <DependentUpon>HistoryControl.xaml</DependentUpon>
+    <Compile Include="Controls\RebtelProgress.xaml.cs">
+      <DependentUpon>RebtelProgress.xaml</DependentUpon>
     </Compile>
     <Compile Include="RebtelUser.cs" />
     <Compile Include="ViewModel.cs" />
@@ -76,6 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="HistoryControl.xaml">
+    <Page Include="Controls\RebtelProgress.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\debossed_heart.png" />
+    <Resource Include="Images\RebtelHeart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

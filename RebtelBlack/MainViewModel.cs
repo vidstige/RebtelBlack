@@ -37,7 +37,7 @@ namespace RebtelBlack
 
         public bool NetworkOperationInProgress
         {
-            get { return false; }
+            get { return true; }
         }
     }
 }
